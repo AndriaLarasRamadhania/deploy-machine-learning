@@ -7,10 +7,6 @@ from google.cloud import firestore
 # Set the path to your service account key
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/A C E R/Documents/deploy-ml/paradisata1-7e3027abbaf9.json"
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/A C E R/Downloads/paradisata1-firebase-adminsdk-e9bvm-106571fc94.json"
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/secrets/ml-secret"
-
-
-
 
 app = Flask(__name__)
 
@@ -20,7 +16,7 @@ model = tf.keras.models.load_model("my_svd_model.h5")
 # Initialize Firestore client for database 'db-user'
 db = firestore.Client(project="paradisata1", database="db-user")
 
-@app.route('/recommend', methods=['POST'])
+@app.route('/recommend', methods=['GET'])
 def recommend():
     try:
         # Fetch all guide data from Firestore
@@ -75,4 +71,5 @@ def load_json_to_firestore():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
-    # app.run(debug=True)
+
+  
