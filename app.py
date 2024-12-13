@@ -7,7 +7,9 @@ from google.cloud import firestore
 # Set the path to your service account key
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/A C E R/Documents/deploy-ml/paradisata1-7e3027abbaf9.json"
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/A C E R/Downloads/paradisata1-firebase-adminsdk-e9bvm-106571fc94.json"
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/secrets/SERVICE_ACCOUNT_KEY"
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/secrets/SERVICE_ACCOUNT_KEY"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/app/credentials.json"
+
 
 
 app = Flask(__name__)
