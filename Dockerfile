@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Copy semua file ke dalam container
 COPY . ./
+COPY paradisata1-firebase-adminsdk-e9bvm-106571fc94.json /app/credentials.json
+
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
